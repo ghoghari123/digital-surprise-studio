@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Final Birthday Challenge
+    </title>
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <!-- HINT IMAGE -->
+
+    <div class="clue-box">
+
+        <h4>
+            🖼️ Hint
+        </h4>
+
+        <img src="../assets/images/birthday.jpg" class="clue-image" alt="Hint">
+
+    </div>
+
+    <!-- MAIN -->
+
+    <div class="container puzzle-container">
+
+        <h1>
+            🧩 Final Challenge
+        </h1>
+
+        <p class="message">
+
+            Complete the puzzle
+            to unlock your
+            birthday surprise ❤️
+
+        </p>
+
+        <!-- TIMER -->
+
+        <div class="timer-container">
+
+            ⏰ Time Left:
+
+            <span id="puzzleTimer">
+
+                30:00
+
+            </span>
+
+        </div>
+
+        <!-- PUZZLE -->
+
+        <div class="puzzle-board" id="puzzleBoard">
+
+        </div>
+
+        <!-- BUTTON -->
+
+        <button id="shuffleBtn">
+
+            Shuffle Puzzle 🔄
+
+        </button>
+
+    </div>
+
+    <!-- WIN POPUP -->
+
+    <div class="popup-overlay" id="puzzlePopup">
+
+        <div class="popup-card">
+
+            <h2>
+                🎉 Congratulations!
+            </h2>
+
+            <p>
+
+                You completed
+                the final challenge.
+
+            </p>
+
+            <button id="finishBtn">
+
+                Open Birthday Surprise ❤️
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="../script.js"></script>
+
+</body>
+
+</html>

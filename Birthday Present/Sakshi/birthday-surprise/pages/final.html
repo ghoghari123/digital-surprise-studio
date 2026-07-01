@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Happy Birthday ❤️
+    </title>
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="final-body">
+
+    <!-- floating hearts -->
+
+
+    <div class="final-container">
+
+        <!-- title -->
+
+        <h1 class="birthday-title">
+
+            🎂 Happy Birthday
+
+            <span id="friendName">
+                My Best Friend
+            </span>
+
+            ❤️
+
+        </h1>
+
+        <div class="music-section">
+
+            <audio id="birthdaySong" autoplay loop controls style="display:none;">
+
+                <source src="https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3"
+                    type="audio/mpeg">
+
+            </audio>
+
+        </div>
+
+        <!-- message -->
+
+        <div class="wish-card">
+
+            <h2>
+                💌 A Message For You
+            </h2>
+
+            <p>
+
+                Happy Birthday ❤️
+
+                <br><br>
+
+                Thank you for being
+                such an important
+                part of my life.
+
+                <br><br>
+
+                Thank you for all
+                the memories,
+                laughter,
+                support and friendship.
+
+                <br><br>
+
+                May your life be filled
+                with happiness,
+                success,
+                love and endless smiles.
+
+                <br><br>
+
+                Today is your day,
+                enjoy every moment.
+
+                <br><br>
+
+                Once again,
+
+                <br><br>
+
+                🎂 Happy Birthday ❤️
+
+            </p>
+
+        </div>
+
+        <!-- final quote -->
+
+        <div class="quote">
+
+            "Some people make our life
+            more beautiful simply
+            by being in it."
+
+        </div>
+
+    </div>
+
+    <script>
+
+        const name =
+            localStorage.getItem(
+                "birthdayName"
+            );
+
+        if (name) {
+
+            document
+                .getElementById(
+                    "friendName"
+                )
+                .innerHTML =
+                name;
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Adventure 🎂</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(-45deg,
+                    #ff758c,
+                    #ff7eb3,
+                    #ff9a9e,
+                    #fad0c4);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* floating hearts */
+
+        .heart {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.3);
+            animation: float 8s linear infinite;
+            user-select: none;
+        }
+
+        @keyframes float {
+            from {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            to {
+                transform: translateY(-120px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* card */
+
+        .container {
+            width: 90%;
+            max-width: 480px;
+
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+
+            border: 1px solid rgba(255, 255, 255, 0.2);
+
+            border-radius: 30px;
+
+            padding: 45px;
+
+            text-align: center;
+
+            box-shadow:
+                0 20px 40px rgba(0, 0, 0, .15);
+
+            animation: appear 1s ease;
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(50px) scale(.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        h1 {
+            color: white;
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            color: white;
+            line-height: 1.8;
+            margin-bottom: 35px;
+            font-size: 15px;
+        }
+
+        /* input */
+
+        .input-group {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        input {
+            width: 100%;
+            padding: 18px 25px;
+
+            border: none;
+            outline: none;
+
+            border-radius: 50px;
+
+            background: rgba(255, 255, 255, .2);
+
+            color: white;
+            font-size: 17px;
+
+            transition: .3s;
+        }
+
+        input::placeholder {
+            color: rgba(255, 255, 255, .7);
+        }
+
+        input:focus {
+            background: rgba(255, 255, 255, .3);
+            transform: scale(1.02);
+            box-shadow: 0 0 25px rgba(255, 255, 255, .4);
+        }
+
+        /* button */
+
+        button {
+            width: 100%;
+            padding: 16px;
+
+            border: none;
+            border-radius: 50px;
+
+            background: white;
+
+            color: #ff4d79;
+
+            font-size: 18px;
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition: .3s;
+        }
+
+        button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, .2);
+        }
+
+        .error {
+            margin-top: 15px;
+            color: white;
+            display: none;
+            animation: shake .4s;
+        }
+
+        @keyframes shake {
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-5px);
+            }
+
+            75% {
+                transform: translateX(5px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- floating hearts -->
+    <div class="heart" style="left:10%;font-size:30px;">💖</div>
+    <div class="heart" style="left:30%;font-size:20px;animation-delay:2s;">💝</div>
+    <div class="heart" style="left:60%;font-size:35px;animation-delay:4s;">💖</div>
+    <div class="heart" style="left:80%;font-size:25px;animation-delay:1s;">💕</div>
+
+    <div class="container">
+
+        <h1>🎂 Birthday Adventure</h1>
+
+        <p class="subtitle">
+            Welcome to a very special birthday journey.
+            <br>
+            Memories, surprises and lots of happiness
+            are waiting for you.
+            <br><br>
+            First, tell me your name ❤️
+        </p>
+
+        <div class="input-group">
+            <input type="text" id="name" placeholder="Enter your beautiful name">
+        </div>
+
+        <button onclick="startAdventure()">
+            Begin Adventure 🚀
+        </button>
+
+        <div class="error" id="error">
+            Please enter your name ❤️
+        </div>
+
+    </div>
+
+    <script>
+        function startAdventure() {
+
+            const name =
+                document
+                    .getElementById("name")
+                    .value
+                    .trim();
+
+            if (!name) {
+                document
+                    .getElementById("error")
+                    .style.display = "block";
+                return;
+            }
+
+            localStorage.setItem(
+                "birthdayName",
+                name
+            );
+
+            document.querySelector(
+                ".container"
+            ).style.transform = "scale(.95)";
+
+            document.querySelector(
+                ".container"
+            ).style.opacity = "0";
+
+            setTimeout(() => {
+
+                // your folder structure
+                window.location.href =
+                    "./pages/welcome.html";
+
+            }, 700);
+        }
+    </script>
+
+</body>
+
+</html>

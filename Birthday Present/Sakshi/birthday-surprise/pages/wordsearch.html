@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Search Challenge</title>
+
+    <!-- main css -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <div class="container wordsearch-container">
+
+        <h1>🔍 Word Search Challenge</h1>
+
+        <div class="top-bar">
+
+            <div class="timer-box">
+                ⏰ Time:
+                <span id="timer">03:00</span>
+            </div>
+
+            <div class="score-box">
+                Found:
+                <span id="foundCount">0</span>/6
+            </div>
+
+        </div>
+
+        <!-- game board -->
+        <div class="word-grid" id="wordGrid">
+
+            <!-- JS create grid here -->
+
+        </div>
+
+        <!-- words -->
+        <div class="words-list">
+
+            <div class="word-item" data-word="FRIEND">
+                FRIEND
+            </div>
+
+            <div class="word-item" data-word="LOVE">
+                LOVE
+            </div>
+
+            <div class="word-item" data-word="PARTY">
+                PARTY
+            </div>
+
+            <div class="word-item" data-word="CAKE">
+                CAKE
+            </div>
+
+            <div class="word-item" data-word="MEMORY">
+                MEMORY
+            </div>
+
+            <div class="word-item" data-word="BIRTHDAY">
+                BIRTHDAY
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- WIN POPUP -->
+
+    <div class="popup-overlay" id="winPopup">
+
+        <div class="popup-card">
+
+            <h2>
+                🎉 Congratulations!
+            </h2>
+
+            <p>
+                You completed the first challenge.
+            </p>
+
+            <div class="secret-code">
+
+                Secret Code:
+
+                <h3>
+                    BESTFRIEND2025
+                </h3>
+
+            </div>
+
+            <button id="nextBtn">
+                Proceed To Next Challenge 🚀
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- JS -->
+
+    <script src="../script.js"></script>
+
+</body>
+
+</html>
